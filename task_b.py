@@ -1,6 +1,7 @@
 def grade_converter():
     try:
         grade = float(input("Please enter a numerical grade between 0 and 100: ").strip())
+        
         if 80 <= grade <= 100:
             letter_grade = 'A'
         elif 60 <= grade < 80:
@@ -12,10 +13,10 @@ def grade_converter():
         elif 0 <= grade < 40:
             letter_grade = 'F'
         else:
-            print("Please enter a grade between 0 and 100.")
+            print("Error: Grades must be between 0 and 100.")
             return
         print(f"Your grade is: {letter_grade}")
     except ValueError:
-        print("Please enter a valid numerical grade.")
+       print("Error: Please enter a number.")
 grade_converter()
 
