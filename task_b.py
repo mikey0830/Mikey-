@@ -1,19 +1,25 @@
-def grade_to_letter():
+def grade_converter():
     try:
-        grade = float(input("Please enter a numerical grade between 0–100: "))
-        if grade < 0 or grade > 100:
-            print("Error: Grades must be between 0 and 100")
-            return
-        if grade >= 80:
-            print("Your grade is: A")
-        elif grade >= 60:
-            print("Your grade is: B")
-        elif grade >= 50:
-            print("Your grade is: C")
-        elif grade >= 40:
-            print("Your grade is: D")
+        grade = float(input("Please enter a numerical grade between 0 and 100: ").strip())
+
+        if 80 <= grade <= 100:
+            letter_grade = 'A'
+        elif 60 <= grade < 80:
+            letter_grade = 'B'
+        elif 50 <= grade < 60:
+            letter_grade = 'C'
+        elif 40 <= grade < 50:
+            letter_grade = 'D'
+        elif 0 <= grade < 40:
+            letter_grade = 'F'
         else:
-            print("Your grade is: F")
+            print("Please enter a grade between 0 and 100.")
+            return
+
+        print(f"Your grade is: {letter_grade}")
+
     except ValueError:
-        print("Error: Please enter a number")
+        print("Please enter a valid numerical grade.")
+
+grade_converter()
 
